@@ -1,0 +1,299 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pu",
+				"public"
+			],
+			[
+				"create",
+				"created_at"
+			],
+			[
+				"or",
+				"organisation_name"
+			],
+			[
+				"requ",
+				"request"
+			],
+			[
+				"name",
+				"namespace"
+			],
+			[
+				"re",
+				"required"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"con",
+				"contact_no"
+			],
+			[
+				"pas",
+				"password_confirmation"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"add",
+				"address"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"Ro",
+				"Route::get\tBasic Get Route."
+			],
+			[
+				"stri",
+				"string"
+			],
+			[
+				"ta",
+				"table"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "files",
+		"selected_items":
+		[
+			[
+				"files",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"sideba",
+				"View: Toggle Open Files in Side Bar"
+			]
+		],
+		"width": 856.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/myvizo/database/migrations/2014_10_12_100000_create_password_resets_table.php",
+		"/C/xampp/htdocs/myvizo/app/Http/Controllers/RegistrationController.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/auth/register1.blade.php",
+		"/C/xampp/htdocs/myvizo/resources/views/payment.blade.php",
+		"/C/xampp/htdocs/myvizo/resources/views/home.blade.php",
+		"/C/xampp/htdocs/myvizo/resources/views/auth/registerform.blade.php",
+		"/C/xampp/htdocs/myvizo/database/migrations/2017_04_15_133309_alter_user_table.php",
+		"/C/xampp/htdocs/myvizo/routes/web.php",
+		"/C/xampp/htdocs/sanjivani/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/sanjivani/app/Http/Controllers/RegistrationController.php",
+		"/C/xampp/htdocs/myvizo/.env",
+		"/C/xampp/htdocs/sanjivani/app/Http/Controllers/dashboardController.php",
+		"/C/xampp/htdocs/sanjivani/database/migrations/2014_10_12_100000_create_password_resets_table.php",
+		"/C/xampp/htdocs/myvizo/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/userdashboard.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/layout.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/layout1.blade.php",
+		"/C/xampp/htdocs/sanjivani/.env",
+		"/C/xampp/htdocs/sanjivani/app/Mail/welcomeagain.php",
+		"/C/xampp/htdocs/sanjivani/app/Mail/Welcomeemail.php",
+		"/C/xampp/htdocs/sanjivani/config/mail.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/emails/welcomeMail.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/auth/login.blade.php",
+		"/C/xampp/htdocs/sanjivani/app/Mail/welcomeMail.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/template.blade.php",
+		"/C/xampp/htdocs/sanjivani/app/User.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/all-users.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/register.php",
+		"/C/xampp/htdocs/sanjivani/app/dashboard.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/dashboard.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/welcome.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/home.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/auth/register.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/userprofile.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/tasks.php",
+		"/C/xampp/htdocs/sanjivani/database/migrations/2017_04_12_125203_alter_users_table_add_more_fileds.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/task/show.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/tasks/index.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/tasks/show.blade.php",
+		"/C/xampp/htdocs/sanjivani/resources/views/register1.php",
+		"/C/xampp/htdocs/sanjivani/config/app.php",
+		"/C/xampp/htdocs/sanjivani/database/migrations/2017_04_10_161016_create_computer_table.php",
+		"/C/xampp/htdocs/sanjivani/routes/web.php",
+		"/C/xampp/htdocs/ips/.env",
+		"/C/xampp/htdocs/ips/config/database.php",
+		"/C/xampp/htdocs/ips/database/migrations/2017_04_09_094040_create_student_table.php",
+		"/C/xampp/htdocs/ips/database/migrations/2017_04_09_091350_create_task_table.php",
+		"/C/xampp/htdocs/ips/database/migrations/2014_10_12_100000_create_password_resets_table.php",
+		"/C/xampp/htdocs/ips/database/migrations/2014_10_12_000000_create_users_table.php"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			">\n",
+			"get",
+			"tasks",
+			"Email",
+			"Name",
+			"th",
+			"tr",
+			"; ?>",
+			"integer",
+			"string"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "User.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 399.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

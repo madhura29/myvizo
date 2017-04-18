@@ -16,7 +16,7 @@ class AlterUserTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             // adding new field to users table
             $table->string('organisation_name')->nullable();
-            $table->integer('contact_no')->nullable();
+            $table->string('contact_no')->nullable();
             $table->string('address')->nullable();
         });
     }

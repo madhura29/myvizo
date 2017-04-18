@@ -65,7 +65,9 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
+                                         <a href="{{ url('/change-password')}}">
+                                            Account 
+                                        </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
