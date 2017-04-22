@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    // call to the payment view
-    
+    //
+    public function index(){
+    	return view('auth.payment');
+    }
 }

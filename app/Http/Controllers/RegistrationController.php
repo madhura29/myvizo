@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\User;
-//use App\Mail\welcomeagain;
-//use mail;
+
+use App\Mail\Welcomemail;
+use mail;
+
 
 class RegistrationController extends Controller
 {
@@ -20,13 +22,7 @@ class RegistrationController extends Controller
 
     public function register_user()
     {
-              /* $userData = dd(request([
-               'name' ,'email',
-               'password','password_confirmation',
-               'organization-name','contact-no','address'
-               
-               ]));*/
-        
+              
                // post method to get data from the registration form 
 
                $name = request('name');
@@ -56,12 +52,8 @@ class RegistrationController extends Controller
                ['name' => $name, 'email' => $email, 'password' => $password, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s'),'organisation_name' => $organisation_name, 'contact_no' => $contact_no,'address' =>$address]
                );
 
-                /* $user = user :: create(request(['name','email','password','created_at',
-                'updated_at','organisation_name','contact_no','address']));
-
-                auth()->login($user);*/
-
-            //  \Mail :: to ($user)->send(new welcomeagain);
+                //mail sending
+              \Mail :: to ($email)->send(new Welcomeemail);
 
               return view('auth.register1');
     }

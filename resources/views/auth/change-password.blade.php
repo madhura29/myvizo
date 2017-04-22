@@ -1,51 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="{!! asset('js/jquery.validate.min.js') !!}"></script>
-
-<script type="text/javascript">
- $(function() {
-     alert('okkkk');  
-    $("#accountForm").validate({
-    	alert('okkkkkkkkkkkkkkkk');
-         // Specify the validation rules
-        rules: {
-            password: {
-                required: true,
-                minlength: 5
-            },
-            password_confirm: {
-                required: true,
-                minlength: 5
-            }
-        },
-        
-        // Specify the validation error messages
-        messages: {
-            password: {
-                required: "Please provide a password",
-                minlength: "Your password must be at least 5 characters long"
-            },
-            password_confirm: {
-            	required: "please provide a password",
-            	minlength: "Your password must be at least 5 characters long",
-			}
-          },
-        
-        submitHandler: function(form) {
-            form.submit();
-        }
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // show the alert
+        setTimeout(function() {
+            $(".alert").alert('close');
+        }, 2000);
     });
 
-  });
- 
 
-</script>
-
-
+    </script>
+    @if (Session::has('flash_message'))
+        <div class="alert alert-warning alert-dismissable" style="text-align: center;">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{ Session::get('flash_message') }}</strong> 
+        </div>
+    @endif
 
 <div class="container">
     <div class="row">
@@ -56,49 +30,64 @@
                     <form class="form-horizontal" name="accountForm" id="accountForm" role="form" method="POST" action="{{ route('change-password-setting') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('old_password') ? ' has-error' : '' }}">
                             <label for="old-password" class="col-md-4 control-label">Old Password</label>
 
                             <div class="col-md-6">
                                 <input id="old-password" type="password" class="form-control" name="old-password">
+
+                                 @if ($errors->has('old_password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('old_password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 							
-							<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+						  <div class="form-group{{ $errors->has('new_password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('new_password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>{{ $errors->first('new_password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group {{ $errors->has('new_password') ? ' has-error' : '' }}">
+                            <label for="password_confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password_confirm" type="password" class="form-control" name="password_confirm">
+
+                                @if ($errors->has('password_confirm'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirm') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="password_confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password_confirm" type="password" class="form-control" name="password_confirm">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                   Submit
+                                   Save
                                 </button>
+                                
+                               <a href="{{ url('/home') }}"><button type="button" class="btn btn-primary">Back</button></a>
                             </div>
+                            
                         </div>
                     </form>
+                  
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 @endsection
