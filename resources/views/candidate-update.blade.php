@@ -16,7 +16,7 @@
                             <div class="col-md-6">
                                 <input id="candidate_name" type="text" class="form-control" name="candidate_name" value="<?php  if (isset($users[0]->candidate_name))
             													    {{ echo $users[0]->candidate_name; }}
-        													 ?>" required autofocus>
+        													 ?>" >
 
                                 @if ($errors->has('candidate_name'))
                                     <span class="help-block">
@@ -32,7 +32,7 @@
                             <div class="col-md-6">
                                 <input id="candidate_email" type="email" class="form-control" name="candidate_email" value="<?php  if (isset($users[0]->candidate_name))
                                                                     {{ echo $users[0]->candidate_email; }}
-                                                             ?>" required>
+                                                             ?>" >
 
                                 @if ($errors->has('candidate_email'))
                                     <span class="help-block">

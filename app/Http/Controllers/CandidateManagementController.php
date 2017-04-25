@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use Illuminate\Pagination\Paginator;
 
 use DB;
 use auth;
 use App\User;
 use Redirect;
 use Session;
-
+use App\Candidate;
 
 class CandidateManagementController extends Controller
 {
@@ -29,9 +30,9 @@ class CandidateManagementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function all_users()
-    {
-         $tasks = DB::table('tbl_candidate')->get();
-         return view('all-user')->with(['users' => $tasks, 'candidates' => '']);
+    { //->orderBy('sources.id','ASC')
+         $tasks = DB::table('tbl_candidate')->orderBy('id','desc')->paginate(10);
+         return view('all-user')->with(['users' => $tasks]);
     }
 
    
@@ -40,38 +41,35 @@ class CandidateManagementController extends Controller
     	    return view('add-candidate-new');
     }
 
-    public function addCandidate() {
-             
-               $candidate_name = request('candidate_name');
-               $candidate_email = request('candidate_email');
-               $candidate_mobile = request('candidate_mobile');
-              
-                // form validation 
-                 $this->validate(request(),[
-                    'candidate_name' => 'required|max:20',
-                    'candidate_email' => 'required',
-                    'candidate_mobile' => 'required|min:10|max:11'
-                 ]);
-                 
-             // insert data into candidate table
-                DB::table('tbl_candidate')->insert([
-                    'candidate_name' => $candidate_name, 
-                    'candidate_email' => $candidate_email,  
-                    'created_at' => date('Y-m-d H:i:s'), 
-                    'updated_at' => date('Y-m-d H:i:s'),
-                    'candidate_mobile' => $candidate_mobile ]);
+    public function addCandidate(Request $request) {
 
+             $candidates = ($request->candidates); //Get all candidates
+
+                        // form validation 
+                       
+                        /*  $this->validate(request(),[
+                            'name' => 'required|max:20',
+                            'email' => 'required',
+                            'phone' => 'required|min:10|max:11'
+                         ]);
+                         */
             
-                $tasks = DB::table('tbl_candidate')->get();
-                \Session::flash('message', 'Candidate Created Successfully!');
-                return view('all-user')->with(['users' => $tasks]);
-        }
+                foreach ($candidates as $key => $value) { //loop via each candidate
+                    $c = new Candidate; //create new candidate object
+                    $c->candidate_name = $value['name'];
+                    $c->candidate_email = $value['email'];
+                    $c->candidate_mobile = $value['phone'];
+                    $c->save(); //save candidate
+                }
+                return response()->json(['msg' => 'Candidates inserted']);
+     }
 
          public function delCandidate($id){
             DB::delete('delete from tbl_candidate where id = ?',[$id]);
-            $tasks = DB::table('tbl_candidate')->get();
-             \Session::flash('message', 'Candidate Deleted Successfully!');
-            return view('all-user')->with(['users' => $tasks]);
+             \Session::flash('message', 'Candidate Deleted Successfully!'); //flash message
+             return redirect('/all-users');
+            
+            
          }
 
          public function showCandidate($id)
@@ -80,14 +78,21 @@ class CandidateManagementController extends Controller
          }
 
          public function updateCandidate(Request $request,$id)
-         {
+        {
+              // form validation 
+                 $this->validate(request(),[
+                    'candidate_name' => 'required|max:20',
+                    'candidate_email' => 'required',
+                    'candidate_mobile' => 'required|min:10|max:11'
+                 ]);
               $candidate_name = $request->input('candidate_name');
               $candidate_email = $request->input('candidate_email');
               $candidate_mobile = $request->input('candidate_mobile');
               DB::update('update tbl_candidate set candidate_name = ?,candidate_email = ? ,candidate_mobile = ?  where id = ?',[$candidate_name,$candidate_email,$candidate_mobile,$id]);
-              $tasks = DB::table('tbl_candidate')->get();
+              
               \Session::flash('message', 'Candidate Updated Successfully!');
-              return view('all-user')->with(['users' => $tasks]);
+              return redirect('/all-users');
+              
          }
 
     }
