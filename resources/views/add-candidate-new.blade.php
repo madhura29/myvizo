@@ -20,8 +20,8 @@
                                  
                                     <div class="form-group" id="formDiv">
                                         <div class="col-md-6 col-md-offset-2">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" name="email[]" id="email" required>
+                                            <label for="candidate_email">Email</label>
+                                            <input type="email" class="form-control" name="candidate_email[]" id="candidate_email" required>
                                         </div>
                                     </div>
                                   
@@ -46,6 +46,11 @@
             </div>
         </div>
     </div>
+</div>
+<div>
+@foreach ($errors->all() as $error)
+    {{ $error }}<br/>
+@endforeach
 </div>
 
 
@@ -156,8 +161,8 @@
                                     
                                     <div class="form-group" id="formDiv">
                                         <div class="col-md-6 col-md-offset-2">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" name="email[]" id="email" required>
+                                            <label for="candidate_email">Email</label>
+                                            <input type="email" class="form-control" name="candidate_email[]" id="candidate_email" required>
                                         </div>
                                     </div>
                                     
@@ -239,8 +244,8 @@
 
         /// end of form validations
          $("#sbmt").click(function(e){
-            var names =  document.getElementsByName('name[]');
-          var emails = document.getElementsByName('email[]');
+          var names =  document.getElementsByName('name[]');
+          var emails = document.getElementsByName('candidate_email[]');
           var phones = document.getElementsByName('phone[]');
           var candidate = [];
           var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');

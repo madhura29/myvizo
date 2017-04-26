@@ -11,6 +11,7 @@ use App\User;
 use Redirect;
 use Session;
 use App\Candidate;
+use Alert;
 
 class CandidateManagementController extends Controller
 {
@@ -47,12 +48,12 @@ class CandidateManagementController extends Controller
 
                         // form validation 
                        
-                        /*  $this->validate(request(),[
+                           $this->validate(request(),[
                             'name' => 'required|max:20',
-                            'email' => 'required',
+                            'candidate_email' => 'required|email',
                             'phone' => 'required|min:10|max:11'
                          ]);
-                         */
+                         
             
                 foreach ($candidates as $key => $value) { //loop via each candidate
                     $c = new Candidate; //create new candidate object
@@ -67,6 +68,7 @@ class CandidateManagementController extends Controller
          public function delCandidate($id){
             DB::delete('delete from tbl_candidate where id = ?',[$id]);
              \Session::flash('message', 'Candidate Deleted Successfully!'); //flash message
+             // Alert::message('Robots are working!');
              return redirect('/all-users');
             
             
@@ -82,8 +84,9 @@ class CandidateManagementController extends Controller
               // form validation 
                  $this->validate(request(),[
                     'candidate_name' => 'required|max:20',
-                    'candidate_email' => 'required',
+                    'candidate_email' =>'required|email',
                     'candidate_mobile' => 'required|min:10|max:11'
+                    
                  ]);
               $candidate_name = $request->input('candidate_name');
               $candidate_email = $request->input('candidate_email');
