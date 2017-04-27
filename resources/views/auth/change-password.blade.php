@@ -1,19 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // show the alert
-        setTimeout(function() {
-            $(".alert").alert('close');
-        }, 2000);
-    });
-
-
-    </script>
+ 
+    
     @if (Session::has('flash_message'))
         <div class="alert alert-warning alert-dismissable" style="text-align: center;">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -89,5 +78,17 @@
         </div>
     </div>
 </div>
+
+   
+    <script type="text/javascript">
+      $(document).ready(function() {
+        // show the alert
+        setTimeout(function() {
+            $(".alert").alert('close');
+        }, 2000);
+    });
+
+
+    </script>
 
 @endsection

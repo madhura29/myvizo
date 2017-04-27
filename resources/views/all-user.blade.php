@@ -1,24 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <!-- sweet alert css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.css">
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // show the alert
-        setTimeout(function() {
-            $(".alert").alert('close');
-        }, 2000);
-    });
-
-
-    </script>
+   
     @if (Session::has('message'))
         <div class="alert alert-success alert-dismissable" style="text-align: center;">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -70,13 +52,9 @@
               </div>
 
               <div class="col-md-8 col-md-offset-7"><strong>{{ $users->render() }}</strong></div>
-              <!-- sweet alert js-->
-              <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
-               
-
-               
-
-             
+                <!-- sweet alert js-->
+                <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
+            
     @endsection
     
 

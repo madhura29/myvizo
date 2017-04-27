@@ -31,15 +31,14 @@ class CandidateManagementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function all_users()
-    { //->orderBy('sources.id','ASC')
+    { 
          $tasks = DB::table('tbl_candidate')->orderBy('id','desc')->paginate(10);
          return view('all-user')->with(['users' => $tasks]);
     }
 
    
     public function listCandidate(){
-            //return redirect('add-candidate');
-    	    return view('add-candidate-new');
+            return view('add-candidate-new');
     }
 
     public function addCandidate(Request $request) {
@@ -47,13 +46,13 @@ class CandidateManagementController extends Controller
              $candidates = ($request->candidates); //Get all candidates
 
                         // form validation 
-                       
+                       /*
                            $this->validate(request(),[
                             'name' => 'required|max:20',
                             'candidate_email' => 'required|email',
                             'phone' => 'required|min:10|max:11'
                          ]);
-                         
+                         */
             
                 foreach ($candidates as $key => $value) { //loop via each candidate
                     $c = new Candidate; //create new candidate object

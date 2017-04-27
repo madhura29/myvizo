@@ -12,8 +12,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- bootsrap css -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <!-- sweet alert css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.css">
+    
+
+
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -81,13 +88,19 @@
             </div>
         </nav>
 
-        @yield('content')
-    </div>
 
-    <!-- Scripts -->
+        @yield('content')
+          <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- include sweetalert js file here -->
     <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
+
+    <!-- jquery and bootstrap js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
+
+    
 
     
 

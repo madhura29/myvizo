@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
 <h2>candidate </h2>
 <div class="container">
     <div class="row">

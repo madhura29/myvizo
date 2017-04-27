@@ -11,13 +11,19 @@
                         <form  class="form-horizontal"  id="fields" name="fields">
                             
                             <div id="formMainDiv">
-                                   <div class="form-group" id="formDiv">
+                                   <div class="form-group  {{ $errors->has('name') ? ' has-error' : '' }} " id="formDiv">
                                         <div class="col-md-6 col-md-offset-2">
                                             <label for="name">Name</label>
-                                            <input type="text" class="form-control" name="name[]" id="name" required autofocus>
+                                            <input type="text" class="form-control" name="name[]" id="name" required>
+
+                                             @if ($errors->has('name'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('name') }}</strong>
+                                              </span>
+                                            @endif
                                         </div>
                                     </div>
-                                 
+
                                     <div class="form-group" id="formDiv">
                                         <div class="col-md-6 col-md-offset-2">
                                             <label for="candidate_email">Email</label>
@@ -127,10 +133,9 @@
     </div>
 </div> -->
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/sweetalert2/6.6.1/sweetalert2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <script type="text/javascript">
  $(document).ready(function(){
@@ -149,11 +154,17 @@
         $('#fields').append(
                 `
                     <br><br>
-                    <div id="formMainDiv">
-                                   <div class="form-group" id="formDiv">
+                    <div id="formMainDiv"> 
+                                   <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}" id="formDiv">
                                         <div class="col-md-6 col-md-offset-2">
                                             <label for="name">Name</label>
                                             <input type="text" class="form-control" name="name[]" id="name" required>
+
+                                            @if ($errors->has('name'))
+                                              <span class="help-block">
+                                                  <strong>{{ $errors->first('name') }}</strong>
+                                              </span>
+                                            @endif
                                         </div>
                                     </div>
                                  
@@ -206,44 +217,7 @@
 
                      });
                        
-                    /*form vaidations
-
-                        $("form[name='fields']").validate({
-                    // Specify validation rules
-                    rules: {
-                      // The key name on the left side is the name attribute
-                      // of an input field. Validation rules are defined
-                      // on the right side
-                      
-                      email: {
-                        required: true,
-                        // Specify that email should be validated
-                        // by the built-in "email" rule
-                        email: true
-                      },
-                     phone: {
-                        required: true,
-                        minlength: 10
-                      }
-                    },
-                    // Specify validation error messages
-                    messages: {
-                      email: "Please enter a valid email address",
-                      phone: {
-                        required: "Please provide a password",
-                        minlength: "Your password must be at least 5 characters long"
-                      },
-                      
-                    },
-                    // Make sure the form is submitted to the destination defined
-                    // in the "action" attribute of the form when valid
-                    submitHandler: function(form) {
-                      form.submit();
-                    }
-                  });*/ 
-
-        /// end of form validations
-         $("#sbmt").click(function(e){
+           $("#sbmt").click(function(e){
           var names =  document.getElementsByName('name[]');
           var emails = document.getElementsByName('candidate_email[]');
           var phones = document.getElementsByName('phone[]');
@@ -284,5 +258,5 @@
    
 
 </script>
-<!----------------------------- -->
+
 @endsection
