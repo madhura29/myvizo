@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use Illuminate\Pagination\Paginator;
+use App\Notifications\InvoicePaid;
+
 
 use DB;
 use auth;
@@ -45,20 +46,15 @@ class CandidateManagementController extends Controller
 
              $candidates = ($request->candidates); //Get all candidates
 
-                        // form validation 
-                       /*
-                           $this->validate(request(),[
-                            'name' => 'required|max:20',
-                            'candidate_email' => 'required|email',
-                            'phone' => 'required|min:10|max:11'
-                         ]);
-                         */
-            
+                       
                 foreach ($candidates as $key => $value) { //loop via each candidate
                     $c = new Candidate; //create new candidate object
                     $c->candidate_name = $value['name'];
                     $c->candidate_email = $value['email'];
                     $c->candidate_mobile = $value['phone'];
+                    //$c->notify(new InvoicePaid($invoice));
+                    //Notification::send($c->candidate_email, new InvoicePaid($invoice));
+
                     $c->save(); //save candidate
                 }
                 return response()->json(['msg' => 'Candidates inserted']);

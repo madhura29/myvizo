@@ -15,6 +15,7 @@ class AlterCandidateAddMobile extends Migration
     {
         Schema::table('tbl_candidate', function($table) {
             $table->string('candidate_mobile');
+            //$table->timestamp('deleted_at');
         });
     }
 
